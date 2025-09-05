@@ -1,0 +1,24 @@
+package com.core;
+
+
+
+public class CurrentAccount extends BankAccount {
+	
+	private int overdraftLimit;
+	
+		CurrentAccount(int accountNumber, double balance, String customerName, String phoneNo,int overdraftLimit){
+			super(accountNumber, balance, customerName, phoneNo);
+			this.overdraftLimit=overdraftLimit;
+		}
+		
+//		
+////		public String useOverdraftLimit()) {
+////			
+////	
+////		}
+		
+		public String toString() {
+			return super.toString() + "  "+ overdraftLimit;
+		}
+
+}

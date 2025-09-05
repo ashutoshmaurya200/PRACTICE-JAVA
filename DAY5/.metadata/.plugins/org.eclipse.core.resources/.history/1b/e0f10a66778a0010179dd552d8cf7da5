@@ -1,0 +1,31 @@
+package com.core;
+
+public class SavingAccount extends BankAccount {
+	
+	private double interestRate;
+
+	public SavingAccount(int accountNumber, double balance, String customerName, String phoneNo, double interestRate) {
+		super(accountNumber, balance, customerName, phoneNo);
+		this.interestRate = interestRate;
+	}
+
+	public void withdraw(double withdrawamt) {
+
+		if(super.getBalance()!=0 && withdrawamt>super.getBalance()) {
+			
+			System.out.println( withdrawamt +super.getBalance() );
+		}
+		
+	}
+	
+
+	public double applyInterest() {
+		return (getBalance() * interestRate) / 100;
+
+	}
+
+	public String toString() {
+		return super.toString() + "  " + this.interestRate;
+	}
+
+}

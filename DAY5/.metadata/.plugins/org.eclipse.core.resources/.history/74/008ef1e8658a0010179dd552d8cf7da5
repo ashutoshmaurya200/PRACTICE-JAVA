@@ -1,0 +1,42 @@
+//Write a Tester - TestBank
+//Given - This bank can support max accounts = 100.
+//
+//Options
+//1. Open Saving account
+//User i/p - accountNumber , balance  , customer name  , phone number , interest rate
+//
+//2. Open Current account
+//User i/p - accountNumber , balance  , customer name  , phone number ,overdraftLimit 
+//
+//3. Display account summary
+//User i/p - account number
+//
+//4. Deposit
+//User i/p - account number , amount
+//
+//5. Withdraw
+//User i/p - account number , amount
+
+
+
+
+package com.Tester;
+import java.util.*;
+import com.core.*;
+
+public class Testit {
+
+	public static void main(String[] args) {
+		
+		Scanner sc =new Scanner(System.in);
+		// making reference array to store objects;
+		BankAccount [] accounts =new BankAccount[100];
+		
+		boolean exit = false;
+		
+		
+		
+
+	}
+
+}

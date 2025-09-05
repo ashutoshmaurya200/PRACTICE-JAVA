@@ -1,0 +1,89 @@
+//Write a Tester - TestBank
+//Given - This bank can support max accounts = 100.
+//
+//Options
+//1. Open Saving account
+//User i/p - accountNumber , balance  , customer name  , phone number , interest rate
+//
+//2. Open Current account
+//User i/p - accountNumber , balance  , customer name  , phone number ,overdraftLimit 
+//
+//3. Display account summary
+//User i/p - account number
+//
+//4. Deposit
+//User i/p - account number , amount
+//
+//5. Withdraw
+//User i/p - account number , amount
+
+package com.Tester;
+
+import java.util.*;
+import com.core.*;
+
+public class Testit {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		// making reference array to store objects;
+		BankAccount[] accounts = new BankAccount[100];
+
+		int counter = 0;
+
+		boolean exit = false;
+
+		while (!exit) {
+			System.out.println("options are : - 1> open Saving account\n" + "2> open current account \n"
+					+ " 3> display account details\n" + " 4> Deposit the amount\n" + "5> withdraw the account \n");
+
+			System.out.println("choose options");
+
+			switch (sc.nextInt()) {
+
+			case 1:
+				System.out.println(" the details of saving account -accountNumber , balance  , customer name  , phone number , interest rate");
+				if (counter < 100) {
+					accounts[counter] = new SavingAccount(sc.nextInt(), sc.nextDouble(), sc.next(), sc.next(),
+							sc.nextDouble());
+					counter++;
+				} else {
+					System.out.println("registration is full..");
+				}
+				
+
+				break;
+			case 2:
+				System.out.println(" Current account --accountNumber , balance  , customer name  , phone number ,overdraftLimit");
+				if (counter < 100) {
+					accounts[counter] = new CurrentAccount(sc.nextInt(), sc.nextDouble(), sc.next(), sc.next(),
+							sc.nextInt());
+					System.out.println("account registered successfully");
+					counter++;
+				} else {
+				System.out.println("registration is full..");
+				}
+				break;
+			case 3:
+
+				int newaccountnumber = sc.nextInt();
+				for (int i = 0; i < counter; i++) {
+					if (accounts[i].getAccountno() == newaccountnumber) {
+						System.out.println(accounts[i]);
+					} else {
+						System.out.println("account number doesn't exist");
+					}
+				}
+
+			default:exit=true;
+
+				break;
+
+			}
+		}
+
+		sc.close();
+	}
+
+}
